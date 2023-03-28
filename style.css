@@ -1,0 +1,787 @@
+@import url(//db.onlinewebfonts.com/c/91d3afe918937141b6ae8e43b1005bc8?family=Sharp+Grotesk+Book+25);
+@import url(//db.onlinewebfonts.com/c/3f864d85d00e6a91a091df0f857f62d8?family=Abuget);
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+    /* font-family: "Sharp Grotesk Book 25"; */
+}
+
+.preloader {
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    width: 100%;
+    background-color: #333;
+    animation: fadeout 0.5s linear forwards;
+    animation-delay: 7s;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+.loading {
+    z-index: 100;
+    color: white;
+    padding-top: 200px;
+    font-size: 30px;
+}
+
+.loader {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 5em;
+    color: #fff;
+    z-index: 100;
+}
+
+.count {
+    height: 100vh;
+    width: 100%;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: black;
+}
+
+.firstcontainer {
+    top: 0;
+    position: sticky;
+    height: 200vh;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.show {
+    display: none;
+}
+
+.hide {
+    display: block;
+}
+
+
+
+.music-player {
+    transform: translateX(130%);
+    opacity: 0;
+    position: fixed;
+    top: 63%;
+    z-index: 999;
+    right: 60px;
+    background-color: #f5f5f5;
+    width: 25%;
+    height: 198px;
+    border-radius: 15px;
+    box-shadow: 0px 17px 118px -37px rgb(130, 0, 82, 0.75);
+    display: flex;
+    align-items: center;
+    transition: all 0.7s ease-in-out;
+}
+
+.musicplayshow {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+#music-icon {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    top: 0px;
+    position: absolute;
+    right: 10px;
+}
+
+
+.info {
+    margin-left: 15px;
+    width: 100%;
+    margin-top: 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.info h1 {
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.info h3 {
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+}
+
+.control-bar {
+    margin-top: 30px;
+}
+
+.control-bar img {
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.control-bar span {
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    top: 2px;
+    position: relative;
+}
+
+#timeContainer {
+    color: #999;
+    position: absolute;
+    top: 631px;
+    right: 74px;
+    z-index: 999;
+    position: fixed;
+}
+
+.slash {
+    color: black;
+}
+
+#currentTime,
+#duration {
+    color: black;
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+.fixside {
+    background: white;
+    height: 39px;
+    width: 209px;
+    position: fixed;
+    z-index: 100;
+    right: -86px;
+    top: 372px;
+    transform: rotate(-90deg);
+    padding: 0px;
+}
+
+.rotateheading {
+    background-color: white;
+    color: black;
+    position: fixed;
+    top: 0px;
+    font-size: 21px;
+    padding: 5px;
+    width: 168px;
+    text-align: center;
+}
+
+.w {
+    background-color: white;
+    color: black;
+    position: fixed;
+    z-index: 100;
+    right: 4px;
+    top: -2px;
+    width: 30px;
+    transform: rotate(90deg);
+    text-align: center;
+}
+
+
+
+.topnav {
+    z-index: 109;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.topnav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    font-size: 20px;
+    list-style: none;
+}
+
+.topnav ul li {
+    color: white;
+    font-weight: 700;
+}
+
+.topnav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: "Sharp Grotesk Book 25";
+}
+
+.topnav ul li:hover {
+    cursor: pointer;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    top: 30px;
+    left: 175px;
+    opacity: 0.7;
+}
+
+.imgbg img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: absolute;
+    z-index: 0;
+}
+
+.imgbg2 img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: absolute;
+    object-position: 0px -57px;
+}
+
+.section1heading {
+    position: absolute;
+    top: 268px;
+    font-size: 50px;
+    color: white;
+    left: 708px;
+    font-family: "Abuget";
+
+}
+
+.goonieslogo img {
+    width: 27%;
+    top: 343px;
+    position: absolute;
+    left: 566px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.skullimg {
+    overflow: hidden;
+    position: fixed;
+    width: 12px;
+    height: 21px;
+    top: 680px;
+    left: 60px;
+    z-index: 999;
+}
+
+.imgskull {
+    padding: 2px 0px;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    /* z-index: 9999999; */
+}
+
+.skullimg:hover .imgskull {
+    transform: translateY(-21px);
+}
+
+.speakerimg {
+    position: fixed;
+    width: 17px;
+    top: 670px;
+    right: 60px;
+    height: 21px;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.imgspeaker {
+    padding: 2px 0px;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.speakerimg:hover .imgspeaker {
+    transform: translateY(-23px);
+}
+
+.scrollimg img {
+    position: absolute;
+    width: 50px;
+    top: 646px;
+    left: 765px;
+    height: 50px;
+}
+
+.try {
+    transform: translateY(200px);
+    height: 100vh;
+    width: 100%;
+}
+
+.plotheading {
+    position: absolute;
+    color: white;
+    top: 280px;
+    left: 725px;
+    font-size: 30px;
+    opacity: 0;
+}
+
+.plotpara {
+    position: absolute;
+    color: white;
+    top: 447px;
+    left: 540px;
+    font-size: 19px;
+    opacity: 0;
+}
+
+.line {
+    height: 100px;
+    position: absolute;
+    display: inline-block;
+    background-color: #fff;
+    top: 440px;
+    left: 780px;
+    width: 1px;
+}
+
+.two {
+    height: 100vh;
+    position: relative;
+    /* position: sticky; */
+    display: flex;
+    overflow: hidden;
+}
+
+.two div img {
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+    filter: brightness(50%);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* .try2 img{
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+    filter:brightness(50%);
+    cursor: pointer;
+
+}
+.try3 img{
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+    filter:brightness(50%);
+    cursor: pointer;
+
+}
+.try4 img{
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+    filter:brightness(50%);
+    cursor: pointer;
+} */
+
+.two div img:hover {
+    filter: brightness(100%);
+    transition: 0.8s ease-out;
+    transform: scale(1.01);
+}
+
+.childname {
+    position: relative;
+    top: 650px;
+    left: 80px;
+    color: white;
+    z-index: 99;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+
+.two .try1:hover .childname {
+    opacity: 0.8;
+}
+
+.two .try2:hover .childname {
+    opacity: 0.8;
+}
+
+.two .try3:hover .childname {
+    opacity: 0.8;
+}
+
+.two .try4:hover .childname {
+    opacity: 0.8;
+}
+
+.third {
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.keyimg {
+    width: 170px;
+    height: 500px;
+    position: relative;
+    top: 200px;
+    left: 700px;
+    /* transform: rotate(0eg); */
+    opacity: 0.4;
+
+}
+
+.coin1img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    /* bottom: 125px; */
+    left: 1200px;
+    opacity: 0.5;
+
+}
+
+.coin2img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    bottom: 160px;
+    left: 260px;
+    opacity: 0.4;
+}
+
+.coin3img {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    bottom: 700px;
+    left: 400px;
+    opacity: 0.5;
+}
+
+.coin4img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    bottom: 860px;
+    left: 1250px;
+    opacity: 0.4;
+}
+
+.gooniestextheading {
+    color: white;
+    font-size: 10px;
+    position: relative;
+    bottom: 600px;
+    font-size: 3rem;
+    left: 550px;
+    opacity: 0;
+}
+
+/* styles for grid container */
+
+.fourth {
+    overflow: hidden;
+}
+
+.credits {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.imginfo {
+    color: white;
+    position: relative;
+    bottom: 60px;
+    right: 75px;
+    font-size: 17px;
+}
+
+.imginfo2 {
+    color: white;
+    position: relative;
+    top: 15px;
+    right: 90px;
+    font-size: 17px;
+}
+
+.imginfosloth {
+    color: white;
+    position: relative;
+    bottom: 60px;
+    right: 237px;
+    font-size: 17px;
+}
+
+.creditscontainer {
+    display: grid;
+    grid-template-columns: 25% 25% auto;
+    width: 100%;
+    height: 80vh;
+    margin: 0;
+    padding: 0;
+}
+
+.creditscontent {
+    height: 364px;
+    border: 1px ridge #ffffff2f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+}
+
+.creditscontainer2 {
+    display: grid;
+    grid-template-columns: 100% 100% 100% 100%;
+    width: 100%;
+}
+
+.creditsimg1 {
+    width: 100%;
+    height: 100%;
+    transition: 2s;
+    filter: brightness(50%);
+}
+
+.creditsimg1:hover {
+    filter: brightness(100%);
+    transition: 1.5s ease-out;
+}
+
+
+.creditsimg2 {
+    width: 35%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+    padding: 0px 30px;
+}
+
+.creditsitem3:hover .creditsimg2 {
+    transform: translateX(150px);
+}
+
+
+
+.credithead {
+    height: 48px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.creditstext {
+    transition: transform 0.2s ease-in-out;
+}
+
+.credithead:hover .creditstext {
+    transform: translateY(-50px);
+}
+
+.creditsimg3 {
+    width: 50%;
+    height: 50%;
+    background-color: black;
+}
+
+.creditsimg4 {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    transition: 2s;
+    filter: brightness(50%);
+}
+
+.creditsimg4:hover {
+    filter: brightness(100%);
+    transition: 1.5s ease-out;
+}
+
+.creditstext {
+    color: white;
+    font-size: 45px;
+    text-align: center;
+    /* padding-top: 100px; */
+}
+
+.creditsinfo {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 60px;
+    padding-top: 50px;
+}
+
+.creditsheading {
+    color: white;
+    text-align: justify;
+    padding-top: 25px;
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.creditsheading2 {
+    color: white;
+    padding-left: 10px;
+}
+
+.fifth {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.skull {
+    position: absolute;
+    left: 640px;
+    width: 200px;
+    top: 250px;
+    opacity: 0.2;
+}
+
+.forest {
+    z-index: 99;
+    position: relative;
+    width: 100%;
+    top: 120px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* Main CSS */
+.grid-wrapper>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-wrapper>div>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 200px;
+    /* grid-auto-flow: dense; */
+}
+
+.grid-wrapper .wide {
+    grid-column: span 2;
+}
+
+.grid-wrapper .tall {
+    grid-row: span 2;
+}
+
+.grid-wrapper .big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.sixth {
+    text-align: center;
+    overflow: hidden;
+}
+
+.gallery {
+    color: white;
+    position: relative;
+    bottom: 330px;
+}
+
+.viewgallery {
+    background-color: black;
+    color: white;
+    position: relative;
+    bottom: 330px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+.seventh {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.subheading {
+    color: white;
+    position: relative;
+    top: 300px;
+    font-size: 25px;
+}
+
+.headingseventh {
+    color: white;
+    position: relative;
+    top: 320px;
+    font-size: 35px;
+}
+
+.topbtn {
+    color: white;
+    position: relative;
+    top: 350px;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer {
+    color: white;
+    position: relative;
+    top: 580px;
+}

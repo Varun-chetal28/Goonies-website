@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goonies Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <!-- PreLoader -->
+    <section class="preloader">
+        <div class="loader">0%</div>
+        <div class="loading">LOADING...</div>
+        <div class="count"></div>
+    </section>
+    <nav class="topnav">
+        <ul>
+            <li> <a href="#plot"> Plot </a></li>
+            <li><a href="#goonies"> Goonies </a></li>
+            <li> <a href="#credits"> Credits </a></li>
+            <li><a href="#gallery"> Gallery </a></li>
+        </ul>
+        <div class="dot"></div>
+    </nav>
+        <div class="music-player " >
+            <img src="assets/music-icon.png" alt="music-icon" id="music-icon">
+            <div class="info">
+                <h1>Josepg Berry</h1>
+                <h3> The Goonies music</h3>
+                <div id="waveform"></div>
+                <div class="control-bar">
+                    <img src="assets/play.png" alt="play" id="playPause" title="Play / Pause">
+                    <img src="assets/stop.png" alt="stop" id="stopBtn" title="Stop">
+                    <img src="assets/volume.png" alt="volume" id="volumeBtn" title="Mute / Unmute">
+                    <span class="backwardBtn"><i class="fa-solid fa-backward"></i></span>
+                    <span class="forwardBtn"><i class="fa-solid fa-forward"></i></span>
+                </div>
+            </div>
+        </div>
+    <div id="timeContainer">
+        <span id="currentTime">0:00</span> <span class="slash">/</span> <span id="duration">0:00</span>
+    </div>
+    <div class="speakerimg">
+        <img src="speakersicon.png" alt="" class="imgspeaker">
+        <img src="speakersicon.png" alt="" class="imgspeaker">
+    </div>
+    <div class="skullimg">
+        <img src="section1skull.png" alt="" class="imgskull">
+        <img src="section1skull.png" alt="" class="imgskull">
+    </div>
+     <section id="plot"></section>
+     <div class="fixside">
+        <h1 class="w">W</h1>
+        <h1 class="rotateheading">Site Of The Day </h1>
+    </div>
+    <section class="firstcontainer" >
+        <div class="imgbg">
+            <img class="section1bg" src="section1bg.jpg" alt="" >
+        </div>
+        <div class="imgbg2">
+            <img class="section1bg2" src="section1bg2.png" alt="">
+        </div>
+        <div class="goonieslogo">
+            <h2 class="section1heading">The story of</h2>
+            <img class="section1goonies" src="goonieslogo.png" alt="">
+        </div>
+        <div class="scrollimg">
+            <img src="section1scroll.gif" alt="">
+        </div>
+        <div class="plotheading">
+            <h2>PLOT</h2>
+        </div>
+        <div class="plotpara">
+            <p> Facing foreclosure of their homes in the Goon Docks area of Astoria, <br>
+                Oregon to an expanding country club, a group of children who call <br>
+                themselves "the Goonies" gather for a final weekend together.</p>
+        </div>
+        <div class="section1line">
+            <span class="line"></span>
+        </div>
+    </section>
+    <section class="two" id="goonies">
+        <div class="try1 try">
+            <h2 class="childname">Mikey</h2>
+            <h4 class="childname">More Info</h4>
+            <img class="childimg" src="kid1.jpg" alt="">
+        </div>
+        <div class="try2 try">
+            <h2 class="childname">Chunk</h2>
+            <h4 class="childname">More Info</h4>
+            <img class="childimg" src="kid2.jpg" alt="">
+        </div>
+        <div class="try3 try">
+            <h2 class="childname">Data</h2>
+            <h4 class="childname">More Info</h4>
+            <img class="childimg" src="kid3.jpg" alt="">
+        </div>
+        <div class="try4 try">
+            <h2 class="childname">Mouth</h2>
+            <h4 class="childname">More Info</h4>
+            <img class="childimg" src="kid4.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="third">
+        <div class="key">
+            <img class="keyimg" src="coinKey.png" alt="">
+        </div>
+        <div class="coin1">
+            <img src="coin1.png" alt="" class="coin1img">
+        </div>
+        <div class="coin2">
+            <img src="coin2.png" alt="" class="coin2img">
+        </div>
+        <div class="coin3">
+            <img src="coin3.png" alt="" class="coin3img">
+        </div>
+        <div class="coin4">
+            <img src="coin2.png" alt="" class="coin4img">
+        </div>
+        <div class="gooniestext">
+            <h1 class="gooniestextheading">Goonies Never Say Die</h1>
+        </div>
+    </section>
+    <section class="fourth" id="credits">
+        <div class="credits">
+            <div class="creditscontainer">
+                <div class="creditscontent creditsitem1">
+                    <div class="credithead">
+                    <h6 class="creditstext">1985</h6>
+                    <h6 class="creditstext">1985</h6>
+                    </div>
+                    <div class="creditsinfo">
+                        <p class="creditsheading">Release date</p>
+                        <p class="creditsheading2">June 7, 1985</p>
+                    </div>
+                </div>
+                <div class="creditscontent creditsitem2">
+                    <img src="steve.jpg" class="creditsimg1">
+                    <p class="imginfo">Story by</p>
+                    <p class="imginfo">Steven Spielberg</p>
+                </div>
+                <div class="creditscontent creditsitem3">
+                    <img src="sloth.png" class="creditsimg2">
+                    <p class="imginfosloth"> Production</p>
+                    <p class="imginfosloth">Amblin Entertainment</p>
+                </div>
+                <div class="creditscontainer2">
+                    <div class="creditscontent creditsitem4">
+                        <img src="warnerbros.png" class="creditsimg3">
+                    </div>
+                    <div class="creditscontent creditsitem5">
+                        <div class="credithead">
+                        <h6 class="creditstext">$19M</h6>
+                        <h6 class="creditstext">$19M</h6>
+                    </div>
+                        <div class="creditsinfo">
+                            <p class="creditsheading">Budget</p>
+                            <p class="creditsheading2">$19
+                                Million</p>
+                        </div>
+                    </div>
+                    <div class="creditscontent creditsitem6">
+                        <img src="dave.jpg" class="creditsimg4">
+                        <p class="imginfo2">Music by</p>
+                    <p class="imginfo2">Dave Grusin</p>
+                    </div>
+                    <div class="creditscontent creditsitem7">
+                        <div class="credithead">
+                        <h6 class="creditstext">$61M</h6>
+                        <h6 class="creditstext">$61M</h6>
+                    </div>
+                        <div class="creditsinfo">
+                            <p class="creditsheading">Box office</p>
+                            <p class="creditsheading2">$61 Million</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="fifth">
+        <div class="skullbgimg">
+            <img src="section1skull.png" alt="" class="skull">
+        </div>
+        <div class="treesimg">
+            <img src="forestimg.png" alt="" class="forest">
+        </div>
+    </section>
+
+    <section class="sixth" id="gallery">
+        <div class="grid-wrapper">
+            <div>
+                <img src="img1.jpg" alt="" />
+            </div>
+            <div>
+                <img src="img2.jpg" alt="" />
+            </div>
+            <div class="tall">
+                <img src="img3.jpg" alt="">
+            </div>
+            <div class="wide">
+                <img src="img4.jpg" alt="" />
+            </div>
+            <div>
+                <img src="img5.jpg" alt="" />
+            </div>
+            <div class="tall">
+                <img src="img6.jpg" alt="" />
+            </div>
+            <div class="big">
+                <img src="img7.jpg" alt="" />
+            </div>
+            <div>
+                <img src="img8.jpg" alt="" />
+            </div>     
+            <div>
+                <img src="img9.jpg" alt="" />
+            </div>   
+        </div>
+        <div class="gallerytext">
+            <h2 class="gallery">Gallery</h2>
+            <h3 class="viewgallery">View Gallery</h3>
+        </div>
+    </section>
+
+    <section class="seventh">
+        <div class="subheading">
+            <h6>Share This Experience</h6>
+        </div>
+        <div class="headingseventh">
+            <h2>the-goonies.webflow.io</h2>
+        </div>
+        <div class="top">
+            <a class="topbtn" href="#plot">Back to top</a>
+        </div>
+        <div class="footer">
+            <h5>Created By Varun Chetal</h5>
+        </div>
+    </section>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
